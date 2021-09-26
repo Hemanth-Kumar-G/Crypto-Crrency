@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.hemanth.cryptocurrency.presentation.coinDetails.CoinDetailScreen
 import com.hemanth.cryptocurrency.presentation.coinList.CoinListScreen
 import com.hemanth.cryptocurrency.presentation.coinList.CoinListViewModel
 import com.hemanth.cryptocurrency.presentation.ui.theme.CryptoCurrencyTheme
@@ -32,7 +33,11 @@ class MainActivity : ComponentActivity() {
                         ) {
                             CoinListScreen(navController)
                         }
-
+                        composable(
+                            route = Screen.CoinDetailScreen.route + "/{coinId}"
+                        ) {
+                            CoinDetailScreen()
+                        }
                     }
                 }
             }
