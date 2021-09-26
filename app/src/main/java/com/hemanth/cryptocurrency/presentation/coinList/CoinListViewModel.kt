@@ -21,11 +21,11 @@ class CoinListViewModel @Inject constructor(
     private val _state = mutableStateOf(CoinListState())
     val state: State<CoinListState> = _state
 
-//    init {
-//        getCoins()
-//    }
+    init {
+        getCoins()
+    }
 
-     fun getCoins() {
+    private fun getCoins() {
         getCoinsUseCase().onEach { result ->
             Log.e(TAG, "getCoins: ${result.data}" )
             when (result) {
